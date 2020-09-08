@@ -8,26 +8,17 @@ import java.util.ArrayList;
  */
 public class Solution {
 	public static int subtractProductAndSum(int n) {
-		ArrayList<Integer> digits = new ArrayList<>();
-//		for(int i = 0; i < digits.size(); i++) {
-//			digits.add(i);
-//			System.out.println(digits.get(i));
-//		}
-		while(n > 9) {
-			digits.add(n % 10);
-			n = n / 10;
-		}
 		int sum = 0;
 		int product = 1;
-		for(int i = 0; i < digits.size(); i++) {
-			System.out.println(digits.get(i));
-			sum += digits.get(i) + sum;
-			product = digits.get(i) * product;
+		while(n > 0) {
+			sum = sum + (n % 10);
+			product = product * (n % 10);
+			n = n / 10;
 		}
 		return product - sum;
 	}
 	public static void main(String[] args) {
-		int n = 1000;
+		int n = 1234;
 		System.out.println(subtractProductAndSum(n));
 	}
 }
