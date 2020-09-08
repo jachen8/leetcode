@@ -13,7 +13,7 @@ public class Solution {
 //			digits.add(i);
 //			System.out.println(digits.get(i));
 //		}
-		while(n > 0) {
+		while(n > 9) {
 			digits.add(n % 10);
 			n = n / 10;
 		}
